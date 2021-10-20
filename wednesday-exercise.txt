@@ -1,0 +1,15 @@
+Go line by line, and explain what's happening in each line.
+
+int score = 80; // A variable of type int and of name score is declared and is assigned a value of 80;
+
+String result;  //We are creating a String variable with the name of "result"
+
+if (score == 80) {                                //Creating and If statement with the condition, if the integer we created "score" is equal in value to 80 then...
+	result = "You passed!";                   //...if true, the result says "You passed"
+} else if (score > 80) {                          //... if false, and if the score is greater than 80, say "You did great!"
+	result = "You did great!";
+} else {                                          //... if false, and score is greater than 80, say "You did not pass. Try again!"
+	result = "You did not pass. Try again!";
+}
+
+System.out.println(result);                       //Print the results to the console
