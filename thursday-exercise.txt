@@ -1,0 +1,56 @@
+public static void main(String[] args) {                              //Declaring the main method with access modifier set to public, non access modifier to static, it is set to void so it does not return a value, and main takes a String with arguements.
+	String[] foodTypes = getFoodTypes();                            //Declaring and array with [] containing String(s) and a(calls GFT method)ssigning the memory address of "foodTypes" to the same as the getFoodTypes() method.
+	String myType = foodTypes[2];                                 //Declaring a String called "myType" and assigning the memory address to the same as the 2nd string in the FoodTypes Array.
+
+	String[] foodsOfMyType = getFoodsByType(myType);              //Declaring a String called "foodsOfMyType" and assigning the value in memory to getFoodsByType method with the parameter of the string "myType".
+	
+	for (String food : foodsOfMyType) {                           //Declaring a for loop (Iterating over an array)(replacing array[i] with array[food], call every input string "food")
+		System.out.println(food);                               //Print to the console the all the Strings in the foodsOfMyType array that refer to "food"
+	}
+}
+
+public static String[] getFoodTypes() {                                           //Declaring a method called getFoodTypes, it is public, static, and uses a character array (String[]).
+	String[] foodTypes = {"breakfast","lunch","dinner","dessert","snack"};      //Declaring an array titled "foodTypes", containing String values "breakfast","lunch","dinner","dessert","snack" as the 0,1st,2nd,3rd,4th entries.
+	return foodTypes;                                                         WIP//The value of foodTypes is returned from the method
+}
+
+public static String[] getFoodsByType(String type) {                  //Declaring a method titled GetFoodsByType with the parameter being a String 
+	String[] foods = new String[3];                                 //Declaring a new Array titled "foods" and creates a new instance of this string array that has an array length of 3.
+
+	switch(type) {                                                //creating a switch statement with the paramter called type
+	case "breakfast":                                               // if the case is breakfast, Pancakes is entered into the 0th position in the array length, cereal in the 1st, and omelttee in the 2nd.
+		foods[0] = "pancakes";
+		foods[1] = "cereal";
+		foods[2] = "omelette";
+		break;
+	case "lunch":                                                   //if the case is lunch, sandwich goes into the 0th psoition in the array length, salad next, followed by soup. (Break to stop the loop)
+		foods[0] = "sandwich";
+		foods[1] = "salad";
+		foods[2] = "soup";
+		break;
+	case "dinner":                                                  //if the case is dinner, curry is inserted first, followed by stir fry, then burger.(Break to stop the loop)
+		foods[0] = "curry";
+		foods[1] = "stir fry";
+		foods[2] = "burger";
+		break;
+	case "dessert":                                                 //if the case is dessert, cake is inserted first, followed by ice cream, then candy.(Break to stop the loop)
+		foods[0] = "cake";
+		foods[1] = "ice cream";
+		foods[2] = "candy";
+		break;
+	case "snack":                                                  //if the case is snack, chips are first, then apple, followed by samosa. (Break to stop the loop)
+		foods[0] = "chips";
+		foods[1] = "apple";
+		foods[2] = "samosa";
+		break;
+	default:                                                       //if none of the previous cases are used, use default. (Break to stop the loop)
+		// add your own
+                food[0] = "pizza"
+                food[1] = "cereal"
+                food[2] = "banana"
+
+		break;
+	}
+
+	return foods;                                                 // the value of foods is returned from the end of the method
+}
