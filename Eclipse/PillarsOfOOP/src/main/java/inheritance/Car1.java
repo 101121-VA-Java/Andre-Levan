@@ -6,10 +6,6 @@ public class Car1 extends Car{
      public String model = "Mustang";
      int year = 2020;
      
-     public void main(String[] args) {
-    	 Car car1 = new Car();
-         car1.ignition();
-         }
      public void greet() {
  		System.out.println("I'm a " + year +" "+ make + " "+ model);
  	}
@@ -18,4 +14,10 @@ public class Car1 extends Car{
      public void accelerate() {
  		System.out.println("Vroom! "+ make + " "+ model +" moved forward " + "10" + " feet");
  	}
+     /*If we wanted to display the year in Car, not Car1, this can be done by using the super keyword in Java.
+      * This allows us to simply take the int value directly from Car.
+      */
+     public void year() {
+    	 System.out.println("I used to drive a " + super.year + " Mustang");
+     }
 }
