@@ -8,11 +8,12 @@ public class Employee {
 	private String password;
 	private Role role; // using an enum to store a specific value
 	private Employee manager;
+	private Boolean isManager;
 	
-	/*public Employee(){
+	//What does this do?
+	public Employee(){
 		super();
-	} i'm not sure what this does
-	*/
+	} 
 	
 	public Employee(String name, String username, String password) {
 		super();
@@ -21,7 +22,7 @@ public class Employee {
 		this.password = password;
 	}
 	
-	public Employee(int id, String name, String username, String password, Role role, Employee manager) {
+	public Employee(int id, String name, String username, String password, Role role, Employee manager, Boolean isManager) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -29,6 +30,7 @@ public class Employee {
 		this.password = password;
 		this.role = role;
 		this.manager = manager;
+		this.isManager = isManager;
 	}
 	
 	public int getId() {
@@ -77,6 +79,14 @@ public class Employee {
 	
 	public void setManager(Employee manager) {
 		this.manager = manager;
+	}
+	
+	public Boolean getIsManager() {
+		return isManager;
+	}
+
+	public void setIsManager(Boolean isManager) {
+		this.isManager = isManager;
 	}
     //FUTURE: ADD TESTING LOGIC below
 }
