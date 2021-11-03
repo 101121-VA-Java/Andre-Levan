@@ -6,6 +6,7 @@ public class FrontEndController {
 	
 	private Scanner sc;
 	private EmployeeController ec;
+	private CustomerController cc;
 	
 	public FrontEndController() {
 		sc = new Scanner(System.in);
@@ -28,19 +29,25 @@ public class FrontEndController {
 			switch(selection) {
 			//Case 1 can only generate new users (Manager can register new employees through the manager menu)
 			case "1": 
+				//Scanner input needed here = new Scanner(System.in);
 				String uoe = sc.nextLine();
 				System.out.println("Please select an option:");
 				System.out.println("1: Register a new User");
-				System.out.println("2: Register a new Employee (Must have Manager credentials");
+				System.out.println("2: Register a new Employee (Must have Manager credentials)");
+		
 				if(uoe == "1") {
-					//ec. reference method here but customer option.
+					System.out.println("Entering new Customer Registration...");
+					cc.registerCustomer(sc);
 				}if(uoe == "2") {
+					//ec.registerEmployee(sc);
 					//Refer to manager login
 					//then refer to manager employee registration.
-				}else {
+				}else if(!(uoe.equals("1")
+						|| uoe.equals("2"))){
 					System.out.println("Error, please only enter 1 or 2");
-					//Refer back to select 1 or 2
+					// add wait and take back to main menu?
 				}
+				//Add option for main menu return. Change else if.
 				break;
 			case "2":
 				//refer to request for login credentials
@@ -54,6 +61,7 @@ public class FrontEndController {
 				//Exit program?
 				break;
 			}
+			break;
 		}
 		sc.close();
 	}
