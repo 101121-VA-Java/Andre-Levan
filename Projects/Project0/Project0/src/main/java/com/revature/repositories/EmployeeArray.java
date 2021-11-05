@@ -5,7 +5,7 @@ import com.revature.models.Role;
 
 public class EmployeeArray implements EmployeeDao {
 	
-	private Employee[] employees = { new Employee(0, "Sully", "Sully", "SullyIsTheBest", Role.ADMIN, null, true) };
+	private Employee[] employees = { new Employee(0, "Admin", "AUsername", "Apassword", Role.ADMIN, null, null) };
 	
 	public EmployeeArray() {
 		super();

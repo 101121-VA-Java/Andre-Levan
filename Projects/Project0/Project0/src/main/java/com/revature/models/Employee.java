@@ -10,7 +10,6 @@ public class Employee {
 	private Employee manager;
 	private Boolean isManager;
 	
-	//What does this do?
 	public Employee(){
 		super();
 	} 
