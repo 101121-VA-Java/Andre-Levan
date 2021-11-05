@@ -38,6 +38,7 @@ public class FrontEndController {
 				String uoe = sc.nextLine();
 				switch(uoe) {
 				
+				//this is inside Register a new account switch
 				case "1":
 					System.out.println("Entering new Customer Registration...");
 					CustomerController rc = new CustomerController();

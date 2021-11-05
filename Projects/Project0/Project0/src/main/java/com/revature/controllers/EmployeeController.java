@@ -20,6 +20,7 @@ public class EmployeeController {
 		String username = scan.nextLine();
 		System.out.println("Enter a password");
 		String password = scan.nextLine();
+		//dataaccessobject
 	}
 
 }
