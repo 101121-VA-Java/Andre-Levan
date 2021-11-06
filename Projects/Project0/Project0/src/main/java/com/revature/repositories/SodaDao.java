@@ -2,7 +2,7 @@ package com.revature.repositories;
 
 import com.revature.models.Soda;
 
-public class SodaDao {
+public interface SodaDao extends GenericDao<Soda>{
 	
 	//Soda[] getAllSoda();
 	  // Soda getSodaByBrand(String Brand);

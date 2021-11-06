@@ -2,7 +2,7 @@ package com.revature.repositories;
 
 import com.revature.models.Customer;
 
-public interface CustomerDao {
+public interface CustomerDao extends GenericDao<Customer>{
 	Customer[] getAllCustomers();
 	Customer getCustomerbyId(int id);
 	int addCustomer(Customer c);

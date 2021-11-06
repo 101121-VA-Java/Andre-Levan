@@ -2,7 +2,7 @@ package com.revature.repositories;
 
 import com.revature.models.Employee;
 
-public interface EmployeeDao {
+public interface EmployeeDao extends GenericDao<Employee>{
 	Employee[] getAllEmployees(); // returns an array of all of the employees available
 	Employee getEmployeeById(int id);
 	int addEmployee(Employee e); // returns assigned id

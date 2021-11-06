@@ -1,6 +1,7 @@
 package com.revature.controllers;
 
 import java.util.Scanner;
+import com.revature.controllers.LoginController;
 
 
 public class FrontEndController {
@@ -68,6 +69,9 @@ public class FrontEndController {
 				
 			case "2":
 				System.out.println("Entering login menu...");
+				LoginController login = new LoginController();
+				login.login(sc);
+				
 				//Scan for username
 				//System.out.println("Enter your password");
 				//refer to request for login credentials
