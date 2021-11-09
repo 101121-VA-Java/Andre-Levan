@@ -2,9 +2,16 @@ package com.revature.controllers;
 
 import java.util.Scanner;
 
+import javax.security.auth.login.LoginException;
+
+import com.revature.services.CustomerService;
+
 public class LoginController {
 	public static Scanner sc;
-	public static void login(Scanner scan) {
+	private static CustomerService cs = new CustomerService();
+			
+			
+	public static void login(Scanner scan) throws LoginException {
 		sc = new Scanner(System.in);
 		System.out.println("Login Controller menu");
 		System.out.println("Select an option below");
@@ -16,10 +23,12 @@ public class LoginController {
 		switch(coe) {
 		case "1":
 			loginCustomer(scan);
+			System.out.println("You are now logged in, welcome!");
 		    break;
 		
 		case "2":
 			loginEmployee(scan);
+			System.out.println("You are now logged in, welcome!");
 	        break;
 	     
 		case "3":
@@ -35,19 +44,22 @@ public class LoginController {
 		}
 		sc.close();
 	}
-	public static void loginCustomer(Scanner scan) {
-		System.out.println("Enter a username:");
+	public static void loginCustomer(Scanner scan) throws LoginException {
+		System.out.println("Enter your username:");
 		String username = scan.nextLine();
 
-		System.out.println("Enter a password");
+		System.out.println("Enter your password");
 		String password = scan.nextLine();
+		cs.login(username, password);
+		
 	}
 	
-	public static void loginEmployee(Scanner scan) {
+	public static void loginEmployee(Scanner scan) throws LoginException {
 		System.out.println("Enter a username:");
 		String username = scan.nextLine();
 
 		System.out.println("Enter a password");
 		String password = scan.nextLine();
+	    //es.login(username,password);
 	}
 }

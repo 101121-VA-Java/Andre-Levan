@@ -1,6 +1,9 @@
 package com.revature.controllers;
 
 import java.util.Scanner;
+
+import javax.security.auth.login.LoginException;
+
 import com.revature.controllers.LoginController;
 
 
@@ -15,7 +18,7 @@ public class FrontEndController {
 		ec = new EmployeeController();
 	}
 	
-	public void start() {
+	public void start() throws LoginException {
 		boolean start = true;
 		
 		while(start) {

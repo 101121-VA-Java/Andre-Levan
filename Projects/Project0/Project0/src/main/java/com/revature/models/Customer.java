@@ -7,29 +7,27 @@ public class Customer {
 	private String lastname;
 	private String username;
 	private String password;
-	private double cardnumber; //for payment processing
 	private boolean hasActiveOrder; //For managers and employees to see who has orders placed.
 	
 	public Customer() {
 		super();
 	}
 	
-	public Customer(String name, String username, String password) {
+	public Customer(String name, String username, String password, String firstname, String lastname) {
 		super();
-		this.firstname = name;
-		this.lastname = name;
+		this.firstname = firstname;
+		this.lastname = lastname;
 		this.username = username;
 		this.password = password;
 	}
 	
-	public Customer(int id, String firstname, String lastname, String username, String password, double cardnumber, boolean hasActiveOrder) {
+	public Customer(int id, String firstname, String lastname, String username, String password, boolean hasActiveOrder) {
 		super();
 		this.id = id;
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.username = username;
 		this.password = password;
-		this.cardnumber = cardnumber;
 		this.hasActiveOrder = hasActiveOrder;
 		
 	}
@@ -74,14 +72,6 @@ public class Customer {
 		this.password = password;
 	}
 
-	public double getCardnumber() {
-		return cardnumber;
-	}
-
-	public void setCardnumber(double cardnumber) {
-		this.cardnumber = cardnumber;
-	}
-	
 	public boolean isHasActiveOrder() {
 		return hasActiveOrder;
 	}

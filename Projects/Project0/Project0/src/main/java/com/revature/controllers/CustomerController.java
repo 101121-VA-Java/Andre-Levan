@@ -17,14 +17,16 @@ public class CustomerController {
 	}
 	
 	public void registerCustomer(Scanner scan) {
-		System.out.println("Enter your name:");
-		String name = scan.nextLine();
+		System.out.println("Enter your first name:");
+		String firstname = scan.nextLine();
+		System.out.println("Enter your last name:");
+		String lastname = scan.nextLine();
 		System.out.println("Enter a username:");
 		String username = scan.nextLine();
 		System.out.println("Enter a password");
 		String password = scan.nextLine();
 		
-		Customer newCustomer = new Customer(name, username, password);
+		Customer newCustomer = new Customer(0, firstname, lastname, username, password, false);
 	
 		// TODO: check whether an employee created or not (if the method works)
 		//		us.addEmployee(newEmployee);
