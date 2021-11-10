@@ -5,11 +5,12 @@ import java.util.Scanner;
 import javax.security.auth.login.LoginException;
 
 import com.revature.services.CustomerService;
+import com.revature.services.EmployeeService;
 
 public class LoginController {
 	public static Scanner sc;
 	private static CustomerService cs = new CustomerService();
-			
+	private static EmployeeService es = new EmployeeService();		
 			
 	public static void login(Scanner scan) throws LoginException {
 		sc = new Scanner(System.in);
@@ -61,6 +62,6 @@ public class LoginController {
 
 		System.out.println("Enter a password");
 		String password = scan.nextLine();
-	    //es.login(username,password);
+	    es.login(username,password);
 	}
 }

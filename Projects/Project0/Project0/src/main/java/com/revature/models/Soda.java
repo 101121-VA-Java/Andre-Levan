@@ -7,6 +7,7 @@ public class Soda {
 	private String brand;
 	private String flavor;
 	private int quantity;
+	private int price;
 	private boolean isDiet;
 	private boolean inStock;
 	
@@ -14,12 +15,13 @@ public class Soda {
 		super();
 	}
 	
-	public Soda(Integer id, String name, String brand, Integer quantity, String flavor, Boolean isDiet, Boolean inStock) {
+	public Soda(Integer id, String name, String brand, Integer quantity,Integer price, String flavor, Boolean isDiet, Boolean inStock) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.brand = brand;
 		this.flavor = flavor;
+		this.price = price;
 		this.quantity = quantity;
 		this.isDiet = isDiet;
 		this.inStock = inStock;
@@ -57,6 +59,14 @@ public class Soda {
 		this.flavor = flavor;
 	}
 	
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
 	public int getQuantity() {
 		return quantity;
 	}

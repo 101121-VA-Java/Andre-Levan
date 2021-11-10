@@ -11,10 +11,10 @@ public class CustomerService {
 	
 	public static CustomerDao cd = new CustomerPostgres();
 	
-	public Customer getCustomerByUsername(String email) {
+	public Customer getCustomerByUsername(String username) {
 		List<Customer> customers = cd.getAll();
 		for(Customer c : customers) {
-			if(c.getUsername().equals(email)) {
+			if(c.getUsername().equals(username)) {
 				return c;
 			}
 		}
