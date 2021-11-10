@@ -9,6 +9,6 @@ public interface EmployeeDao extends GenericDao<Employee>{
 	List<Employee> getAllEmployees(); // returns an array of all of the employees available
 	Employee getEmployeeById(int id);
 	Employee addEmployee(Employee e) throws IOException; // returns assigned id
-	boolean editEmployee(Employee e);  //returns boolean depending on operation success 
-	boolean deleteEmployee(int id);  //returns boolean depending on operation success 
+	boolean editEmployee(Employee e);  
+	boolean deleteEmployee(int id);  
 }

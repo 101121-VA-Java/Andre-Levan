@@ -11,17 +11,25 @@ public class Soda {
 	private boolean isDiet;
 	private boolean inStock;
 	
-	public Soda() {
+	public Soda(int id, String name, String brand, String flavor, int quantity, int price, boolean instock) {
 		super();
+		this.id = id;
+		this.name = name;
+		this.brand = brand;
+		this.flavor = flavor;
+		this.quantity = quantity;
+		this.price = price;
+		this.inStock = inStock;
 	}
 	
-	public Soda(String name, String brand, String flavor, Integer quantity, Integer price) {
+	public Soda(String name, String brand, String flavor, Integer quantity, Integer price,boolean instock) {
 		super();
 		this.name = name;
 		this.brand = brand;
 		this.flavor = flavor;
 		this.quantity = quantity;
 		this.price = price;
+		this.inStock = inStock;
 		
 	}
 	

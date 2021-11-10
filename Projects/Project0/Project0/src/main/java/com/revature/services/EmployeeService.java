@@ -1,5 +1,6 @@
 package com.revature.services;
 
+import com.revature.repositories.EmployeeDao;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;

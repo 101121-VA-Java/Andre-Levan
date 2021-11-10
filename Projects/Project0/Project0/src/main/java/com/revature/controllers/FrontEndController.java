@@ -1,11 +1,19 @@
 package com.revature.controllers;
 
+import com.revature.util.ConnectionUtil;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 
 import javax.security.auth.login.LoginException;
 
 import com.revature.controllers.LoginController;
+import com.revature.repositories.SodaPostgres;
 
 
 public class FrontEndController {
@@ -27,7 +35,7 @@ public class FrontEndController {
 			System.out.println("Please select an option from the following:");
 			System.out.println("1: Register a new account");
 			System.out.println("2: Login to your existing account(WIP)");
-			System.out.println("3: Browse inventory as guest(WIP)");
+			System.out.println("3: Browse inventory as guest");
 			System.out.println("4: Exit");
 			
 			String selection = sc.nextLine();
@@ -59,8 +67,7 @@ public class FrontEndController {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					//Refer to manager login
-					//then refer to manager employee registration.
+					
 					break;
 				case "3":
 					System.out.println("Returning to main menu...");
@@ -88,7 +95,8 @@ public class FrontEndController {
 				
 			case "3":
 				System.out.println("Notice: You can only browse inventory here, please login as a user to place an order");
-				//refer to browsing inventory method
+				SodaPostgres soa = new SodaPostgres();
+				soa.getAllSoda();
 				break;
 				
 			case "4":

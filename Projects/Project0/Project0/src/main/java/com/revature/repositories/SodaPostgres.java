@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+import com.revature.models.Customer;
 import com.revature.models.Soda;
 import com.revature.util.ConnectionUtil;
 
@@ -60,33 +61,57 @@ public class SodaPostgres implements SodaDao{
 	}
 
 	@Override
-	public Soda[] getAllCustomers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public Soda getSodabyName(String name) {
+		String sql =
+				"select * from Soda";
+		Soda soa = null;
+		
+		try(Connection con = ConnectionUtil.getConnectionFromEnv()){
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.executeQuery();
+			ResultSet rs = ps.executeQuery();
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return soa;
+	}
+
+
+	@Override
+	public Soda[] getAllSoda() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Soda addCustomer(Soda s) {
+	public Soda addSoda(Soda s) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public boolean editCustomer(Soda s) {
+	public boolean editSoda(Soda s) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public boolean deleteCustomer(int id) {
+	public boolean deleteSoda(int name) {
 		// TODO Auto-generated method stub
 		return false;
+	}
+
+	@Override
+	public boolean deleteSodaByName(Soda s) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Soda getSodaByName(int name) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
