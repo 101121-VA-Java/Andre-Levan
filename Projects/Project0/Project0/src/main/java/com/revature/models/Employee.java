@@ -9,7 +9,7 @@ public class Employee {
 	private String lastname;
 	private String username;
 	private String password;
-	private String role; // using an enum to store a specific value
+	private String role; 
 	private int managerid;
 	private Boolean isManager; //using to easily check who is a manager and who isn't
 	

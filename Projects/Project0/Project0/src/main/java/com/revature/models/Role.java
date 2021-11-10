@@ -1,5 +1,5 @@
 package com.revature.models;
 
 public enum Role {
-	BASIC_USER, MANAGER, ADMIN
+	BASIC_USER, STOCKER, MANAGER, ADMIN
 }
