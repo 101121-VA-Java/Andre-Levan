@@ -15,6 +15,16 @@ public class Soda {
 		super();
 	}
 	
+	public Soda(String name, String brand, String flavor, Integer quantity, Integer price) {
+		super();
+		this.name = name;
+		this.brand = brand;
+		this.flavor = flavor;
+		this.quantity = quantity;
+		this.price = price;
+		
+	}
+	
 	public Soda(Integer id, String name, String brand, Integer quantity,Integer price, String flavor, Boolean isDiet, Boolean inStock) {
 		super();
 		this.id = id;

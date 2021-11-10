@@ -19,7 +19,7 @@ public class EmployeeController {
 	
 	//Registering new employees
 	public void registerEmployee(Scanner scan) throws IOException {
-		//Send to manager login first
+		//manager login
 		System.out.println("Enter your first name:");
 		String firstname = scan.nextLine();
 		System.out.println("Enter your last name:");

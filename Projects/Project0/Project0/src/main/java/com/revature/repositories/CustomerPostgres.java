@@ -14,6 +14,7 @@ import com.revature.util.ConnectionUtil;
 
 public class CustomerPostgres implements CustomerDao{
 
+	//this same method is found below
 	@Override
 	public Customer add(Customer c) {
 		

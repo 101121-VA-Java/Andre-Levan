@@ -29,4 +29,9 @@ public class CustomerService {
 		cd.update(cus);
 		return cus;
 	}
+	
+	public void cMenu() {
+		System.out.println("Customer shop Menu, please select an option below:");
+		
+	}
 }

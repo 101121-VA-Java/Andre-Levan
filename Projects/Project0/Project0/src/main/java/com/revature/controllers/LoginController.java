@@ -25,6 +25,7 @@ public class LoginController {
 		case "1":
 			loginCustomer(scan);
 			System.out.println("You are now logged in, welcome!");
+			cs.cMenu();
 		    break;
 		
 		case "2":
@@ -53,6 +54,8 @@ public class LoginController {
 		System.out.println("Enter your password");
 		String password = scan.nextLine();
 		cs.login(username, password);
+		CustomerService cs = new CustomerService();
+		
 		
 	}
 	

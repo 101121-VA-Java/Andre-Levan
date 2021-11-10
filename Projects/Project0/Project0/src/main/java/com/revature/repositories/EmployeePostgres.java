@@ -29,13 +29,13 @@ public class EmployeePostgres implements EmployeeDao{
 				int id = rs.getInt("e_id");
 				String firstname = rs.getString("e_firstname");
 				String lastname = rs.getString("e_lastname");
-				String e_username = rs.getString("e_username");
-				String e_password = rs.getString("e_password");
+				String username = rs.getString("e_username");
+				String password = rs.getString("e_password");
 				String role = rs.getString("e_role");
 				int man_id = rs.getInt("man_e_id");
 				Boolean isManager = rs.getBoolean("isman");
 
-				Employee newEmp = new Employee(id, firstname, lastname, e_username, e_password, role, man_id, isManager);
+				Employee newEmp = new Employee(id, firstname, lastname, username, password, role, man_id, isManager);
 				employees.add(newEmp);
 			}
 		} 
