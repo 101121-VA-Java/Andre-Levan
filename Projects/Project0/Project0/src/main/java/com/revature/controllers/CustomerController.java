@@ -12,12 +12,12 @@ public class CustomerController {
 	private CustomerService ca = new CustomerService();
 	
 	public void searchRegCustomer() {
-		//scanner to get input
 		//try {
 			//Customer c = ca.getCustomerByName()
 		//}
 	}
 	
+	//Registering new Customer
 	public void registerCustomer(Scanner scan) {
 		System.out.println("Enter your first name:");
 		String firstname = scan.nextLine();

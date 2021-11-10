@@ -35,8 +35,8 @@ public class CustomerPostgres implements CustomerDao{
 			
 			if(rs.next()) {
 				int c_id = rs.getInt("c_id");
-				String c_first_name = rs.getString("c_first_name");
-				String c_last_name = rs.getString("c_last_name");
+				String c_first_name = rs.getString("c_firstname");
+				String c_last_name = rs.getString("c_lastname");
 				String c_username = rs.getString("c_username");
 				String c_password = rs.getString("c_password");
 				Boolean hasActiveOrder = rs.getBoolean("c_hasActiveOrder");
@@ -71,8 +71,8 @@ public class CustomerPostgres implements CustomerDao{
 			
 			while(rs.next()) {
 				int id = rs.getInt("c_id");
-				String firstName = rs.getString("c_first_name");
-				String lastName = rs.getString("c_last_name");
+				String firstName = rs.getString("c_firstname");
+				String lastName = rs.getString("c_lastname");
 				String username = rs.getString("c_username");
 				String password = rs.getString("c_password");
 				Boolean hasActiveOrder = rs.getBoolean("c_hasActiveOrder");
