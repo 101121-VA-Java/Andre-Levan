@@ -44,6 +44,7 @@ public class LoginController {
 		}
 		sc.close();
 	}
+	
 	public static void loginCustomer(Scanner scan) throws LoginException {
 		System.out.println("Enter your username:");
 		String username = scan.nextLine();
