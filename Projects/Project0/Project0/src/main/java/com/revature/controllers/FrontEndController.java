@@ -34,7 +34,7 @@ public class FrontEndController {
 			System.out.println("Hello! Welcome to Sully's Soda Shoppe!");
 			System.out.println("Please select an option from the following:");
 			System.out.println("1: Register a new account");
-			System.out.println("2: Login to your existing account(WIP)");
+			System.out.println("2: Login to your existing account");
 			System.out.println("3: Browse inventory as guest");
 			System.out.println("4: Exit");
 			

@@ -19,8 +19,8 @@ public class SodaController {
 		Integer quantity = scan.nextInt();
 		System.out.println("Enter the price in USD");
 		Integer price = scan.nextInt();
-		Soda newsoda = new Soda(name, brand, flavor, quantity, price);
-		us.sd.addSoda(newsoda);
+		//Soda newsoda = new Soda(name, brand, flavor, quantity, price);
+		//us.sd.addSoda(newsoda);
 		System.out.println("Soda added to the shelf! Returning to menu... ");
 		
 	}
