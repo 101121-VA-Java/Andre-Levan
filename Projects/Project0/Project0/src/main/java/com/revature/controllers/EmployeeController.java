@@ -30,6 +30,7 @@ public class EmployeeController {
 		Employee newemp = new Employee(firstname, lastname, username, password);
 		us.ed.addEmployee(newemp);
 		try {
+			System.out.println("Employee Added! Returning to main menu...");
 			FrontEndController.start();
 		} catch (LoginException e) {
 			// TODO Auto-generated catch block

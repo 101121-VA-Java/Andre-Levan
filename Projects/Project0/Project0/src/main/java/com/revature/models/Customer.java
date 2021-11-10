@@ -13,12 +13,13 @@ public class Customer {
 		super();
 	}
 	
-	public Customer(String name, String username, String password, String firstname, String lastname) {
+	public Customer(String firstname, String lastname, String username, String password, Boolean hasActiveOrder) {
 		super();
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.username = username;
 		this.password = password;
+		this.hasActiveOrder = hasActiveOrder;
 	}
 	
 	public Customer(int id, String firstname, String lastname, String username, String password, boolean hasActiveOrder) {

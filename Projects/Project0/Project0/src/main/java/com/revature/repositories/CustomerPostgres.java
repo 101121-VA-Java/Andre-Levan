@@ -28,7 +28,7 @@ public class CustomerPostgres implements CustomerDao{
 				"select * from customers where c_id = ?";
 		Customer cus = null;
 		
-		try(Connection con = ConnectionUtil.getConnectionFromFile()){
+		try(Connection con = ConnectionUtil.getConnectionFromEnv()){
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
@@ -45,7 +45,7 @@ public class CustomerPostgres implements CustomerDao{
 				cus = new Customer(c_id, c_first_name, c_last_name, c_username, c_password, hasActiveOrder);
 			}
 		} 
-		catch (SQLException | IOException e) {
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return cus;
@@ -65,7 +65,7 @@ public class CustomerPostgres implements CustomerDao{
 				"select * from customers";
 		List<Customer> customers = new ArrayList<>();
 		
-		try (Connection con = ConnectionUtil.getConnectionFromFile()){
+		try (Connection con = ConnectionUtil.getConnectionFromEnv()){
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery(sql);
 			
@@ -81,7 +81,7 @@ public class CustomerPostgres implements CustomerDao{
 				customers.add(newCus);
 			}
 		}
-		catch (SQLException | IOException e) {
+		catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return customers;
@@ -108,9 +108,24 @@ public class CustomerPostgres implements CustomerDao{
 
 	//next add
 	@Override
-	public int addCustomer(Customer c) {
+	public Customer addCustomer(Customer c) {
+		String sql = "insert into customers (c_firstname,c_lastname, c_username,c_password, c_hasActiveOrder)"
+				+ "values(?,?,?,?,?) returning c_id;";
 		
-		return 0;
+		try(Connection con = ConnectionUtil.getConnectionFromEnv()){
+			PreparedStatement ps = con.prepareStatement(sql);
+			
+			ps.setString(1,  c.getFirstname());
+			ps.setString(2,  c.getLastname());
+			ps.setString(3, c.getUsername());
+			ps.setString(4, c.getPassword());
+			ps.setBoolean(5, false);
+			ResultSet rs = ps.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return c;
 	}
 
 	@Override

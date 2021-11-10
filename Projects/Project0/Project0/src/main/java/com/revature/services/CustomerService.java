@@ -9,7 +9,7 @@ import com.revature.repositories.CustomerPostgres;
 
 public class CustomerService {
 	
-	private static CustomerDao cd = new CustomerPostgres();
+	public static CustomerDao cd = new CustomerPostgres();
 	
 	public Customer getCustomerByUsername(String email) {
 		List<Customer> customers = cd.getAll();

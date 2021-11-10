@@ -2,6 +2,8 @@ package com.revature.controllers;
 
 import java.util.Scanner;
 
+import javax.security.auth.login.LoginException;
+
 import com.revature.models.Customer;
 import com.revature.services.CustomerService;
 
@@ -26,12 +28,15 @@ public class CustomerController {
 		System.out.println("Enter a password");
 		String password = scan.nextLine();
 		
-		Customer newCustomer = new Customer(0, firstname, lastname, username, password, false);
-	
-		// TODO: check whether an employee created or not (if the method works)
-		//		us.addEmployee(newEmployee);
-				
-			//	System.out.println("Employee has been registered");
+		Customer newCustomer = new Customer(firstname, lastname, username, password, false);
+        ca.cd.addCustomer(newCustomer);
+        try {
+        	System.out.println("Customer Added! Returning to main menu...");
+			FrontEndController.start();
+		} catch (LoginException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
