@@ -1,5 +1,6 @@
 package com.revature.controllers;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import javax.security.auth.login.LoginException;
@@ -9,7 +10,7 @@ import com.revature.controllers.LoginController;
 
 public class FrontEndController {
 	
-	private Scanner sc;
+	private static Scanner sc;
 	private EmployeeController ec;
 	private CustomerController cc;
 	
@@ -18,7 +19,7 @@ public class FrontEndController {
 		ec = new EmployeeController();
 	}
 	
-	public void start() throws LoginException {
+	public static void start() throws LoginException {
 		boolean start = true;
 		
 		while(start) {
@@ -52,7 +53,12 @@ public class FrontEndController {
 					System.out.println("NOTE: Only managers may register new employees.");
 					System.out.println("Entering new Employee Registration...");
 					EmployeeController re = new EmployeeController();
-					re.registerEmployee(sc);
+					try {
+						re.registerEmployee(sc);
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
 					//Refer to manager login
 					//then refer to manager employee registration.
 					break;

@@ -21,7 +21,7 @@ public class EmployeePostgres implements EmployeeDao{
 		String sql = "select * from employees";
 		List<Employee> employees = new ArrayList<>();
 		
-		try(Connection con = ConnectionUtil.getConnectionFromFile()){
+		try(Connection con = ConnectionUtil.getConnectionFromEnv()){
 			Statement s = con.createStatement();
 			ResultSet rs = s.executeQuery(sql);
 			
@@ -41,9 +41,6 @@ public class EmployeePostgres implements EmployeeDao{
 		} 
 		catch (SQLException e) {
 			e.printStackTrace();	
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
 		}
 		return employees;
 	}
@@ -61,7 +58,7 @@ public class EmployeePostgres implements EmployeeDao{
 		String sql = "insert into employees (e_firstname,e_lastname, e_username,e_password, e_role, man_e_id, isMan)"
 				+ "values(?,?,?,?,?,?,?) returning e_id;";
 		
-		try(Connection con = ConnectionUtil.getConnectionFromFile()){
+		try(Connection con = ConnectionUtil.getConnectionFromEnv()){
 			PreparedStatement ps = con.prepareStatement(sql);
 			
 			ps.setString(1,  e.getFirstname());
